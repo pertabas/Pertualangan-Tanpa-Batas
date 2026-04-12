@@ -10117,3 +10117,98 @@ textarea.form-control {
     transform: translateY(-30px);
   }
 }
+
+/* Gallery Styles - Terpisah dari style utama */
+
+.gallery-container {
+    margin-bottom: 30px;
+}
+
+/* Gaya untuk foto besar */
+.gallery-main {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: #f8f9fa;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.gallery-main img:hover {
+    transform: scale(1.02);
+}
+
+/* Container untuk foto-foto kecil (thumbnail) */
+.gallery-thumbs {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+/* Gaya setiap item thumbnail */
+.thumb-item {
+    width: calc(20% - 12px); /* 5 item per baris, dengan gap 15px */
+    min-width: 80px;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.thumb-img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    display: block;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    border-radius: 6px;
+}
+
+/* Efek hover pada thumbnail */
+.thumb-item:hover .thumb-img {
+    transform: scale(1.05);
+    border-color: #F96D00;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Thumbnail aktif */
+.thumb-img.active {
+    border-color: #F96D00;
+    box-shadow: 0 0 0 2px rgba(249, 109, 0, 0.3);
+}
+
+/* Responsive: Untuk layar kecil */
+@media (max-width: 768px) {
+    .thumb-item {
+        width: calc(33.333% - 10px);
+    }
+    
+    .thumb-img {
+        height: 70px;
+    }
+    
+    .gallery-thumbs {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .thumb-item {
+        width: calc(50% - 8px);
+    }
+    
+    .thumb-img {
+        height: 60px;
+    }
+}
