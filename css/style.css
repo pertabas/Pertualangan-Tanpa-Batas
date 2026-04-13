@@ -10118,16 +10118,16 @@ textarea.form-control {
   }
 }
 
-/* Gallery Styles - Terpisah dari style utama */
+/* Gallery Styles */
 
 .gallery-container {
     margin-bottom: 30px;
+    padding: 0 15px;
 }
 
-/* Gaya untuk foto besar */
 .gallery-main {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -10146,17 +10146,16 @@ textarea.form-control {
     transform: scale(1.02);
 }
 
-/* Container untuk foto-foto kecil (thumbnail) */
 .gallery-thumbs {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin-top: 10px;
 }
 
-/* Gaya setiap item thumbnail */
 .thumb-item {
-    width: calc(20% - 12px); /* 5 item per baris, dengan gap 15px */
+    width: calc(20% - 12px);
     min-width: 80px;
     cursor: pointer;
     border-radius: 8px;
@@ -10175,21 +10174,22 @@ textarea.form-control {
     border-radius: 6px;
 }
 
-/* Efek hover pada thumbnail */
 .thumb-item:hover .thumb-img {
     transform: scale(1.05);
     border-color: #F96D00;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Thumbnail aktif */
 .thumb-img.active {
     border-color: #F96D00;
     box-shadow: 0 0 0 2px rgba(249, 109, 0, 0.3);
 }
 
-/* Responsive: Untuk layar kecil */
 @media (max-width: 768px) {
+    .gallery-container {
+        padding: 0 12px;
+    }
+
     .thumb-item {
         width: calc(33.333% - 10px);
     }
@@ -10199,16 +10199,46 @@ textarea.form-control {
     }
     
     .gallery-thumbs {
-        gap: 10px;
+        gap: 12px;
+        margin-top: 15px;
+    }
+    
+    .gallery-main {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
     }
 }
 
 @media (max-width: 480px) {
+    .gallery-container {
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+
     .thumb-item {
         width: calc(50% - 8px);
     }
     
     .thumb-img {
         height: 60px;
+    }
+    
+    .gallery-thumbs {
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .gallery-main {
+        max-width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
+    }
+    
+    .gallery-main img {
+        width: 90%;
+        margin: 0 auto;
     }
 }
